@@ -1,17 +1,62 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import React from "react";
+import App from "./App.js";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// function CurrencyConverter() {
+//   const [fromCurrency, setFromCurrency] = useState("USD");
+//   const [toCurrency, setToCurrency] = useState("EUR");
+//   const [amount, setAmount] = useState("");
+//   const [output, setOuptput] = useState("");
+
+//   useEffect(
+//     function () {
+//       async function Convert() {
+//         if (!amount) return;
+//         const res = await fetch(
+//           `https://api.frankfurter.app/latest?amount=${amount}&from=${fromCurrency}&to=${toCurrency}`
+//         );
+//         const data = await res.json();
+//         setOuptput(Object.values(data.rates)[0]);
+//       }
+//       Convert();
+//     },
+//     [amount, fromCurrency, toCurrency]
+//   );
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         value={amount}
+//         onChange={(e) => setAmount(Number(e.target.value))}
+//       />
+//       <select
+//         value={fromCurrency}
+//         onChange={(e) => setFromCurrency(e.target.value)}
+//       >
+//         <option value="USD">USD</option>
+//         <option value="EUR">EUR</option>
+//         <option value="CAD">CAD</option>
+//         <option value="INR">INR</option>
+//       </select>
+//       <select
+//         value={toCurrency}
+//         onChange={(e) => setToCurrency(e.target.value)}
+//       >
+//         <option value="USD">USD</option>
+//         <option value="EUR">EUR</option>
+//         <option value="CAD">CAD</option>
+//         <option value="INR">INR</option>
+//       </select>
+//       {amount ? <p>Output: {output}</p> : <p></p>}
+//     </div>
+//   );
+// }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
