@@ -88,7 +88,7 @@ export default function App() {
           setIsLoading(true);
           setError(false);
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${Key}&s=${query}
+            `https://www.omdbapi.com/?apikey=${Key}&s=${query}
           `,
             { signal: controller.signal }
           );
@@ -221,7 +221,7 @@ function MovieDetails({ id, onCloseMovie, onAddWatch, watched }) {
     function () {
       async function fetchDetails() {
         setIsLoading(true);
-        const res = await fetch(`http://www.omdbapi.com/?apikey=${Key}&i=${id}
+        const res = await fetch(`https://www.omdbapi.com/?apikey=${Key}&i=${id}
           `);
         const data = await res.json();
         setMovie(data);
@@ -458,25 +458,3 @@ function WatchedMovie({ movie, onDeleteWatched }) {
     </li>
   );
 }
-
-// function WatchedBox() {
-//   const [isOpen2, setIsOpen2] = useState(true);
-//   const [watched, setWatched] = useState(tempWatchedData);
-
-//   return (
-//     <div className="box">
-//       <button
-//         className="btn-toggle"
-//         onClick={() => setIsOpen2((open) => !open)}
-//       >
-//         {isOpen2 ? "–" : "+"}
-//       </button>
-//       {isOpen2 && (
-//         <>
-//           <WatchedSummary watched={watched} />
-//           <WatchedMoviesList watched={watched} />
-//         </>
-//       )}
-//     </div>
-//   );
-// }
